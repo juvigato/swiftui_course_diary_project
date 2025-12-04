@@ -3,19 +3,37 @@ import Foundation
 
 struct ContentView: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            DiaryHeaderView()
-
-            ForEach(DiaryViewModel.shared.fields) { item in
-                DiaryFieldView(header: .init(model: item)) {
-                    Text(item.text)
+        
+        NavigationStack {
+             
+            List(DiaryViewModel.shared.fields) { field in
+                
+                DiaryFieldView(header: .init(model: field)) {
+                    
+                    Text(field.text)
+                    
+                    if let imageName = field.imageName {
+                        Image(imageName)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(maxHeight: 200)
+                            .clipped()
+                            .padding(.top, DiarySpacing.small)
+                            .padding(.bottom, DiarySpacing.small)
+                            
+                    }
                 }
+                
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
             }
-
-            Spacer()
+            
+            .listStyle(.plain)
+            .background(DiaryColors.Background.primary)
+            .listRowBackground(Color.clear)
+            
+            .navigationTitle("Diário da Jujuba")
         }
-        .padding()
-        .background(Color.Background.primary)
     }
 }
 

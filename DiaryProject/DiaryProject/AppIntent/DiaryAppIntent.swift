@@ -32,7 +32,8 @@ struct DiaryAppIntent: AppIntent {
     func perform() async throws -> some IntentResult {
         DiaryViewModel.shared.addField(icon: Image(systemName: iconName),
                                        title: title,
-                                       text: title)
+                                       text: title,
+                                       imageName: nil)
         return .result()
     }
 }

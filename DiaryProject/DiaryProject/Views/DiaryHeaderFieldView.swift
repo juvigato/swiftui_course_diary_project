@@ -20,7 +20,7 @@ struct DiaryHeaderFieldView: View {
                     .font(.headline)
                 Text(date)
                     .font(.caption)
-                    .foregroundStyle(Color.Text.caption)
+                    .foregroundStyle(DiaryColors.Text.caption)
             }
             Spacer()
         }

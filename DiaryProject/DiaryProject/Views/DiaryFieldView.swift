@@ -16,7 +16,7 @@ struct DiaryFieldView<Content:View>: View {
             content
         }
         .padding()
-        .background(Color.Background.secondary)
-        .cornerRadius(16)
+        .background(DiaryColors.Background.secondary)
+        .cornerRadius(DiarySpacing.medium)
     }
 }

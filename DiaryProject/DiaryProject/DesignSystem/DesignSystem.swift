@@ -1,20 +1,10 @@
 import SwiftUI
 
-extension Color {
-    init(dark: Color, light: Color) {
-        self = Color(UIColor { traitCollection in
-            traitCollection.userInterfaceStyle == .dark ? UIColor(dark) : UIColor(light)
-        })
-    }
-}
+enum DiaryColors { }
 
-extension ShapeStyle where Self == SwiftUI.Color {
-    static func color(_ token: Color) -> Self {
-        token
-    }
-}
-
-extension Color {
+extension DiaryColors {
+    
+    /// Enum that specifies the text colors used on the project
     enum Text {
         static var title: Color {
             return SwiftUI.Color(dark: SwiftUI.Color(uiColor: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)),
@@ -27,6 +17,7 @@ extension Color {
         }
     }
 
+    /// Enum that specifies the icon colors used on the project
     enum Icon {
         static var primary: Color {
             return SwiftUI.Color(dark: SwiftUI.Color(uiColor: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)),
@@ -39,6 +30,7 @@ extension Color {
         }
     }
 
+    /// Enum that specifies the background colors used on the project
     enum Background {
         static var primary: Color {
             return SwiftUI.Color(dark: SwiftUI.Color(uiColor: #colorLiteral(red: 0.09707006067, green: 0.07800304145, blue: 0.08343816549, alpha: 1)),
