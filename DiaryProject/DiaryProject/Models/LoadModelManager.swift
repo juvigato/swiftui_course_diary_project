@@ -6,7 +6,7 @@ var diaryModel = getViewModel()
 
 private func getViewModel() -> [DiaryField] {
     fieldArrayModel.compactMap { field in
-        let tags: [DiaryTag] = field.tags.map {
+        let tags: [DiaryTag] = field.tags.compactMap {
             DiaryTag(tag: $0)
         }
         

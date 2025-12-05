@@ -30,18 +30,18 @@ class DiaryViewModel {
 //            print("### Error: \(error.localizedDescription)")
 //            return []
 //        }
-        return [DiaryTag(tag: "#tag")]
+        return []
     }
     
-    func addField(icon: Image, title: String, text: String, imageName: String?) async {
+    func addField(icon: Image, title: String, text: String, imageName: String?) {
         let date = Date.now.formatted(date: .abbreviated, time: .omitted)
-        let tags = await generate(input: text)
+//        let tags = await generate(input: text)
         let newField = DiaryField(icon: icon,
                                      title: title,
                                      date: date,
                                      text: text,
                                      imageName: imageName,
-                                     tags: tags)
+                                     tags: [])
         DiaryViewModel.shared.fields.append(newField)
     }
 }

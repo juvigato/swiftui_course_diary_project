@@ -25,11 +25,14 @@ struct ContentView: View {
                             .padding(.top, DiarySpacing.small)
                             .padding(.bottom, DiarySpacing.small)
                     }
-                
-                    // TODO: Fix when tag logic is created
-                    Text(field.tags[0].tag)
+
+                    HStack {
+                        ForEach(field.tags) { tag in
+                            Text(tag.tag)
+                                .italic()
+                        }
+                    }
                 }
-                
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
             }

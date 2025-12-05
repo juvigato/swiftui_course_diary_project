@@ -14,6 +14,8 @@ struct InputView: View {
     
     @State private var showingSheet = true
     
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
             VStack {
                 Text("Adicione uma entrada para seu diário!")
@@ -38,14 +40,13 @@ struct InputView: View {
             
             
             Button("Adicionar") {
-                Task {
-                    await DiaryViewModel.shared.addField(icon: Image(systemName: "heart"),
-                                                           title: title,
-                                                           text: text,
-                                                           imageName: nil)
-                }
+                DiaryViewModel.shared.addField(icon: Image(systemName: iconName),
+                                               title: title,
+                                               text: text,
+                                               imageName: nil)
+                dismiss()
             }
-            .foregroundStyle(DiaryColors.Icon.brand)
+            .foregroundStyle(DiaryColors.Brand.default)
             .bold()
     }
 }

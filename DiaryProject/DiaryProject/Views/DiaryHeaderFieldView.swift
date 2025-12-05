@@ -15,9 +15,13 @@ struct DiaryHeaderFieldView: View {
     var body: some View {
         HStack {
             icon
+                .foregroundStyle(DiaryColors.Brand.default)
             VStack(alignment: .leading) {
                 Text(title)
                     .font(.headline)
+                    .bold()
+                    .foregroundStyle(DiaryColors.Brand.secondary)
+                
                 Text(date)
                     .font(.caption)
                     .foregroundStyle(DiaryColors.Text.caption)
@@ -25,4 +29,13 @@ struct DiaryHeaderFieldView: View {
             Spacer()
         }
     }
+}
+
+#Preview {
+    DiaryHeaderFieldView(model: DiaryField(icon: Image(systemName: "heart.fill"),
+                                           title: "Title",
+                                           date: "12 Jan 25",
+                                           text: "Text",
+                                           imageName: nil,
+                                           tags: []))
 }
