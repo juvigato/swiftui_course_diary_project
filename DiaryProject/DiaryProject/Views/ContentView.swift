@@ -2,6 +2,9 @@ import SwiftUI
 import Foundation
 
 struct ContentView: View {
+    
+    @State var showAddView: Bool = false
+    
     var body: some View {
         
         NavigationStack {
@@ -11,6 +14,7 @@ struct ContentView: View {
                 DiaryFieldView(header: .init(model: field)) {
                     
                     Text(field.text)
+                        .padding(.top, DiarySpacing.xSmall)
                     
                     if let imageName = field.imageName {
                         Image(imageName)
@@ -20,8 +24,10 @@ struct ContentView: View {
                             .clipped()
                             .padding(.top, DiarySpacing.small)
                             .padding(.bottom, DiarySpacing.small)
-                            
                     }
+                
+                    // TODO: Fix when tag logic is created
+                    Text(field.tags[0].tag)
                 }
                 
                 .listRowBackground(Color.clear)
@@ -33,6 +39,19 @@ struct ContentView: View {
             .listRowBackground(Color.clear)
             
             .navigationTitle("Diário da Jujuba")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showAddView.toggle()
+                    } label : {
+                        Image(systemName: "plus")
+                    }
+                    .sheet(isPresented: $showAddView) {
+                        InputView()
+                            .presentationDetents([.medium])
+                    }
+                }
+            }
         }
     }
 }

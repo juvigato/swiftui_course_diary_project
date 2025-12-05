@@ -30,10 +30,10 @@ struct DiaryAppIntent: AppIntent {
     }
     
     func perform() async throws -> some IntentResult {
-        DiaryViewModel.shared.addField(icon: Image(systemName: iconName),
-                                       title: title,
-                                       text: title,
-                                       imageName: nil)
+        await DiaryViewModel.shared.addField(icon: Image(systemName: iconName.lowercased()),
+                                             title: title,
+                                             text: text,
+                                             imageName: nil)
         return .result()
     }
 }
