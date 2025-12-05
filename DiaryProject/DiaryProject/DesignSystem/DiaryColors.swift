@@ -33,9 +33,6 @@ extension DiaryColors {
         }
         
         static var secondary: Color {
-//            return SwiftUI.Color(dark: SwiftUI.Color(uiColor: #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 0.55)),
-//                                 light: SwiftUI.Color(uiColor: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 0.9)))
-            
             return SwiftUI.Color(dark: SwiftUI.Color(uiColor: #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)),
                                  light: SwiftUI.Color(uiColor: #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 0.9)))
         }
