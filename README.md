@@ -2,7 +2,9 @@
 
 ### 📝 Projeto
 Este projeto foi feito em SwiftUI, com o objetivo de estudar alguns temas com mais profundidade, sendo eles: Extensions, ViewBuilder, Concorrência e paralelismo, Foundation Models, App Intents, Animations e SPM. 
+
 Ele tem como tema "Diário", logo foi pensando num fluxo simples mostrando uma tela principal ao usuário que contém as entradas do diário, e a opção de adicionar outras entradas a partir de um botão da navigationBar.
+
 Ele também possui a funcionalidade de atalho, então é possível ir no app Atalhos e criar um para nosso aplicativo. Além disso, ao pesquisar o nome do app na barra de busca, temos uma ação rápida de atalho, também para criar uma entrada para o diário.
 
 
