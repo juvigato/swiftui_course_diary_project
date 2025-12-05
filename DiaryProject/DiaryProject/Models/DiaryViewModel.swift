@@ -13,14 +13,7 @@ import SwiftUI
 class DiaryViewModel {
     static let shared = DiaryViewModel()
     
-    var fields: [DiaryField] = [
-        DiaryField(icon: Image(systemName: "heart.fill"),
-                      title: "Magic Kingdom",
-                      date: "24 de nov de 25",
-                      text: "This is halloween, this is halloween",
-                      imageName: "magic_kingdom",
-                      tags: [DiaryTag(tag: "#castelo")])
-    ]
+    var fields: [DiaryField] = diaryModel
     
     private func generate(input: String) async -> [DiaryTag] {
         // TODO: Fix creation of tag

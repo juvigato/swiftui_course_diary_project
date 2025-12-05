@@ -1,0 +1,23 @@
+[
+    {
+        "iconName": "heart.fill",
+        "title": "Magic Kingdom",
+        "date": "24 de nov de 25",
+        "text": "This is halloween, this is halloween",
+        "imageName": "magic_kingdom",
+         "tags": [
+             "#castelo",
+             "#mickey"
+         ]
+    },
+    {
+        "iconName": "star",
+        "title": "Dia no Epcot",
+        "date": "25 de nov de 25",
+        "text": "Adorei o parque, muito lindo os países em volta do lago! Mas meu favorito mesmo foi a montanha russa dos Guardiões da galáxia",
+        "imageName": "epcot",
+         "tags": [
+             "#guardioes"
+         ]
+    }
+]

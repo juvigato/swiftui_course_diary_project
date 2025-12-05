@@ -16,6 +16,12 @@ struct InputView: View {
     
     var body: some View {
             VStack {
+                Text("Adicione uma entrada para seu diário!")
+                    .padding(.bottom, DiarySpacing.medium)
+                    .font(.title3)
+                    .bold()
+                    
+                
                 TextField("Nome do ícone", text: $iconName)
                     .textFieldStyle(.roundedBorder)
                     .padding(.bottom, DiarySpacing.small)
@@ -39,6 +45,8 @@ struct InputView: View {
                                                            imageName: nil)
                 }
             }
+            .foregroundStyle(DiaryColors.Icon.brand)
+            .bold()
     }
 }
 
